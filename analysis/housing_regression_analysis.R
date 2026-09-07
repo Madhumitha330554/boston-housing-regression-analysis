@@ -126,3 +126,91 @@ anova(housing_model)
 cat("R-squared:", model_summary$r.squared, "\n")
 cat("Adjusted R-squared:", model_summary$adj.r.squared, "\n")
 cat("Residual Standard Error:", model_summary$sigma, "\n")
+# --------------------------------------------------
+# Save Visualizations for GitHub Portfolio
+# --------------------------------------------------
+
+# Create images directory if it does not exist
+if (!dir.exists("images")) {
+  dir.create("images")
+}
+
+# 1. Crime Rate vs Median Home Value
+png("images/crime_vs_home_value.png", width = 1000, height = 700)
+
+plot(
+  housing$crim,
+  housing$medv,
+  main = "Crime Rate vs Median Home Value",
+  xlab = "Per-Capita Crime Rate",
+  ylab = "Median Home Value ($1000s)",
+  pch = 19
+)
+
+abline(
+  lm(medv ~ crim, data = housing),
+  lwd = 2
+)
+
+dev.off()
+
+
+# 2. Pupil-Teacher Ratio vs Median Home Value
+png("images/ptratio_vs_home_value.png", width = 1000, height = 700)
+
+plot(
+  housing$ptratio,
+  housing$medv,
+  main = "Pupil-Teacher Ratio vs Median Home Value",
+  xlab = "Pupil-Teacher Ratio",
+  ylab = "Median Home Value ($1000s)",
+  pch = 19
+)
+
+abline(
+  lm(medv ~ ptratio, data = housing),
+  lwd = 2
+)
+
+dev.off()
+
+
+# 3. Actual vs Predicted Home Values
+png("images/actual_vs_predicted.png", width = 1000, height = 700)
+
+plot(
+  housing$medv,
+  housing$predicted_medv,
+  main = "Actual vs Predicted Home Values",
+  xlab = "Actual Median Home Value ($1000s)",
+  ylab = "Predicted Median Home Value ($1000s)",
+  pch = 19
+)
+
+abline(
+  0,
+  1,
+  lwd = 2
+)
+
+dev.off()
+
+
+# 4. Residuals vs Fitted Values
+png("images/residuals_vs_fitted.png", width = 1000, height = 700)
+
+plot(
+  housing_model$fitted.values,
+  residuals(housing_model),
+  main = "Residuals vs Fitted Values",
+  xlab = "Fitted Values",
+  ylab = "Residuals",
+  pch = 19
+)
+
+abline(
+  h = 0,
+  lwd = 2
+)
+
+dev.off()
