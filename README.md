@@ -106,6 +106,33 @@ The model intentionally uses a limited set of predictors and explains approximat
 This suggests that housing prices are influenced by additional characteristics that are not represented in the current model. A stronger predictive model could evaluate additional variables, interaction effects, nonlinear relationships, feature transformations, and alternative modeling approaches.
 
 The Boston Housing dataset is a historical benchmark dataset, so this analysis should be viewed as a statistical modeling exercise rather than a representation of current Boston housing conditions.
+## Visualizations
+
+### Crime Rate vs Median Home Value
+
+This visualization explores the relationship between neighborhood crime rates and median housing values.
+
+![Crime Rate vs Median Home Value](images/crime_vs_home_value.png)
+
+### Pupil-Teacher Ratio vs Median Home Value
+
+This plot examines how pupil-teacher ratios are associated with median housing values.
+
+![Pupil-Teacher Ratio vs Median Home Value](images/ptratio_vs_home_value.png)
+
+### Actual vs Predicted Housing Values
+
+This visualization compares the model's predicted housing values with the actual observed values.
+
+![Actual vs Predicted Housing Values](images/actual_vs_predicted.png)
+
+### Residuals vs Fitted Values
+
+The residual plot is used to evaluate model fit and identify patterns or potential violations of regression assumptions.
+
+![Residuals vs Fitted Values](images/residuals_vs_fitted.png)
+
+---
 
 ## Repository Structure
 
